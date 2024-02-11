@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 
 LABEL org.opencontainers.image.title=ubuntu-cicd-base
-LABEL org.opencontainers.image.source=https://github.com/libre-devops/base-images
+LABEL org.opencontainers.image.source=https://github.com/libre-devops/cicd-base-images
 
 RUN rm -rf /bin/sh && ln -sf /bin/bash /bin/sh
 
