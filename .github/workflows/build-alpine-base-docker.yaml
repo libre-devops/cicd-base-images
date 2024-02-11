@@ -54,3 +54,4 @@ jobs:
             -DockerFileName ${{ inputs.docker_file_name }} `
             -RegistryUsername ${{ secrets.RegistryUsername }} `
             -RegistryPassword ${{ secrets.RegistryPassword }}
+            -ImageOrg ${{ github.repository_owner }}

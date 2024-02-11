@@ -61,6 +61,7 @@ param (
     [string]$RegistryUrl = "ghcr.io",
     [string]$RegistryUsername = "myusername",
     [string]$RegistryPassword = "mypassword",
+    [string]$ImageOrg,
     [string]$WorkingDirectory = (Get-Location).Path,
     [string]$DebugMode = "false",
     [string]$PushDockerImage = "true"
@@ -93,7 +94,16 @@ function Check-DockerExists {
     }
 }
 
-$DockerImageName = "${RegistryUrl}/${RegistryUsername}/${DockerImageName}"
+if ($null -eq $ImageOrg)
+{
+    $ImageOrganisation = $RegistryUsername
+}
+else
+{
+    $ImageOrganisation = $ImageOrg
+}
+
+$DockerImageName = "${RegistryUrl}/${ImageOrganisation}/${DockerImageName}"
 
 function Build-DockerImage {
     param (
