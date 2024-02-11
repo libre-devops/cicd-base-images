@@ -1,4 +1,4 @@
-name: 'Run Docker - Alpine'
+name: 'Run Docker - RHEL'
 
 # Allow run manually
 on:
